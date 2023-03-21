@@ -7,26 +7,19 @@ var specialArr = ['!','?','$','/','|','(',')','&','@','<',
 '>','[',']'];
 var numberArry = ['0','1','2','3','4','5','6','7','8','9'];
 
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
+// swapped generatePassword function to top of JS file
 function generatePassword() {
   var conditionsArry =[];
+  // "prompt" is a METHOD that displays a dialog box requesting user input
   length=(prompt('Password Length? Must be 8 - 128 characters.'));
-
+// "||" = OR
   if (length < 8 || length > 128 || isNaN(length) ) {
-    alert("Please select number between 8-128.")
+    alert("Please select number between 8 & 128.")
     return 
   }
-  
+  // "confirm" is a METHOD that displays a dialog box with "ok" or "cancel"
   if (confirm("Would you like lowercase letters?")) {
+    // "concat" is a METHOD used to merge multiple arrays, forming a new array
     conditionsArry = conditionsArry.concat(lcArry);
   }
   if (confirm("Would you like uppercase letters?")) {
@@ -50,5 +43,16 @@ function generatePassword() {
 
 
 }
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
