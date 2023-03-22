@@ -29,9 +29,10 @@ function generatePassword() {
     conditionsArry= conditionsArry.concat(specialArr);
   }
   if (confirm("Would you like numbers?")) {
-    conditionsArry = conditionsArry.concat(numberArry);
+    conditionsArry = conditionsArry.concat(numberArry);                
   }
-  var randomChar =""; 
+  // "randomChar" is the new variable created from generatePassword function
+  var randomChar ="";                                                                                                                      
 
   for (i=0;i<length; i++) {
     randomChar+= conditionsArry[Math.floor(Math.random()*conditionsArry.length)];
