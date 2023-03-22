@@ -25,7 +25,7 @@ THEN the password is either displayed in an alert or written to the page
 ## Mock Up
 Click the red button to generate a random password based on your criteria.
 
-![](./Assets/images/sample-image.png) 
+![](./Assets/Images/sample-image.png) 
 
 
 
