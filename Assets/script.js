@@ -10,6 +10,7 @@ var numberArry = ['0','1','2','3','4','5','6','7','8','9'];
 // swapped generatePassword function to top of JS file
 function generatePassword() {
   var conditionsArry =[];
+
   // "prompt" is a METHOD that displays a dialog box requesting user input
   length=(prompt('Password Length? Must be 8 - 128 characters.'));
 // "||" = OR
@@ -31,13 +32,16 @@ function generatePassword() {
   if (confirm("Would you like numbers?")) {
     conditionsArry = conditionsArry.concat(numberArry);                
   }
-  // "randomChar" is the new variable created from generatePassword function
+
+  if (conditionsArry === undefined || conditionsArry.length ==0) {
+    alert("Please select at least 1 character type.");
+    return null 
+  }
   var randomChar ="";                                                                                                                      
 
   for (i=0;i<length; i++) {
     randomChar+= conditionsArry[Math.floor(Math.random()*conditionsArry.length)];
   }
-  console.log(randomChar)
 
 
   return randomChar;
